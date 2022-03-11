@@ -332,10 +332,10 @@ Column {
     }
 
     // SESSION SELECT
-  //SessionButton {
-  //    id: sessionSelect
-  //    textConstantSession: textConstants.session
-  //}
+    SessionButton {
+        id: sessionSelect
+        textConstantSession: textConstants.session
+    }
 
     // ERROR FIELD
     Item {
