@@ -6,9 +6,6 @@ ColumnLayout {
     id: formContainer
     SDDM.TextConstants { id: textConstants }
 
-    property int p: config.ScreenPadding
-    property string a: config.FormPosition
-
     Clock {
         id: clock
         Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
@@ -17,6 +14,6 @@ ColumnLayout {
 
     Input {
         id: input
-        Layout.alignment: Qt.AlignVBottom
+        Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
     }
 }

@@ -46,13 +46,13 @@ Item {
             contentItem: Text {
                 text: model.name
                 font.pointSize: root.font.pointSize * 0.8
-                color: palFg
+                color: selectSession.highlightedIndex === index ? "#444" : root.palette.highlight
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
             }
             highlighted: parent.highlightedIndex === index
             background: Rectangle {
-                color: palBg
+                color: selectSession.highlightedIndex === index ? root.palette.highlight : "transparent"
             }
         }
 
@@ -62,7 +62,7 @@ Item {
 
         contentItem: Text {
             id: displayedItem
-            text: textConstantSession + ": " + selectSession.currentText
+            text: (config.TranslateSession || (textConstantSession + ":")) + " " + selectSession.currentText
             color: root.palette.text
             verticalAlignment: Text.AlignVCenter
             anchors.left: parent.left
@@ -72,11 +72,11 @@ Item {
 
         background: Rectangle {
             color: "transparent"
-            border.width: cfgBorderWidth
-            border.color: palOvr
+            border.width: parent.visualFocus ? 1 : 0
+            border.color: "transparent"
             height: parent.visualFocus ? 2 : 0
             width: displayedItem.implicitWidth
-            anchors.top: parent.top
+            anchors.top: parent.bottom
             anchors.left: parent.left
             anchors.leftMargin: 3
         }
@@ -98,6 +98,7 @@ Item {
             }
 
             background: Rectangle {
+                radius: config.RoundCorners / 2
                 color: "#444"
                 layer.enabled: true
                 layer.effect: DropShadow {
@@ -122,11 +123,11 @@ Item {
                 when: selectSession.down
                 PropertyChanges {
                     target: displayedItem
-                    color: Qt.darker(palPpl, 1.1)
+                    color: Qt.darker(root.palette.highlight, 1.1)
                 }
                 PropertyChanges {
                     target: selectSession.background
-                    border.color: Qt.darker(palPpl, 1.1)
+                    border.color: Qt.darker(root.palette.highlight, 1.1)
                 }
             },
             State {
@@ -134,11 +135,11 @@ Item {
                 when: selectSession.hovered
                 PropertyChanges {
                     target: displayedItem
-                    color: Qt.lighter(palPpl, 1.1)
+                    color: Qt.lighter(root.palette.highlight, 1.1)
                 }
                 PropertyChanges {
                     target: selectSession.background
-                    border.color: Qt.lighter(palPpl, 1.1)
+                    border.color: Qt.lighter(root.palette.highlight, 1.1)
                 }
             },
             State {
@@ -146,11 +147,11 @@ Item {
                 when: selectSession.visualFocus
                 PropertyChanges {
                     target: displayedItem
-                    color: palPpl
+                    color: root.palette.highlight
                 }
                 PropertyChanges {
                     target: selectSession.background
-                    border.color: palPpl
+                    border.color: root.palette.highlight
                 }
             }
         ]
@@ -165,4 +166,5 @@ Item {
         ]
 
     }
+
 }
