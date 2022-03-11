@@ -1,11 +1,11 @@
 [SddmGreeterTheme]
-Name=Verbb
+Name=verbb2
 Description=nouun's personal sddm theme
 Author=nouun
 Copyright=Copyright (C) 2021 nouun
 License=MIT
 Type=sddm-theme
-Version=1.2
+Version=0.1.2
 Website=https://github.com/nouun/sddm-verrb
 Screenshot=Preview.png
 MainScript=Main.qml
