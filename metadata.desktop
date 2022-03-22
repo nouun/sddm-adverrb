@@ -1,14 +1,14 @@
 [SddmGreeterTheme]
-Name=verbb2
+Name=adverrb
 Description=nouun's personal sddm theme
 Author=nouun
-Copyright=Copyright (C) 2021 nouun
+Copyright=Copyright (C) 2022 nouun
 License=MIT
 Type=sddm-theme
 Version=0.1.2
-Website=https://github.com/nouun/sddm-verrb
+Website=https://github.com/nouun/sddm-adverrb
 Screenshot=Preview.png
 MainScript=Main.qml
 Email=me@nouun.dev
-Theme-Id=verrb
+Theme-Id=adverrb
 Theme-API=2.11
